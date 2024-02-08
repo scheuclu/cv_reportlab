@@ -1,0 +1,162 @@
+#CV_TITLE: standard_cv
+name: Lukas Scheucher
+email: lukas@scheuclu.com
+#phone: '2125121957'
+# website: scheuclu.com
+linkedin: scheuclu
+github: scheuclu
+# https://raw.githubusercontent.com/scheuclu/hugo_cv/main/pdfgen/cv.pdf
+downloadlink: https://drive.google.com/file/d/1cwTlfPPMLef-gv71QqaRxkU06rdi_qAi/view?usp=sharing
+
+sections:
+  - heading: Work Experience
+    logos:
+      - /logo_compass.png
+      - /logo_toptal.png
+      - /logo_google.png
+      - /logo_volkswagen.png
+    subsections:
+
+      - heading:
+          logo: /logo_compass.png
+          label: CTO - Compass Labs, London
+          startdate: March 2023
+          enddate: present
+        points:
+          - I started as founding engineer, building our backtesting tool, visualization dashboard as well as our backend on GCP.
+          - I eventually took over as CTO. Here, I actively engage with customers. I am also in charge of hiring and technical management.
+          - I am also involved in fundraising and investor relations and we raised 1.5M from a tier-1 US VC.
+      - heading:
+          logo: /logo_toptal.png
+          label: Freelance Software Engineer, Remote
+          startdate: May 2022
+          enddate: March 2023
+        points:
+          - Working as a freelance engineer on projects focusing on data-science and backend engineering.
+          - Thanks to my generalist background, I've been helping early-stage startups building up their MVPs, setting up their backend and CI/CD pipelines, improving their code, etc.
+          - Working with Toptal, A.team and other platforms.
+      - heading:
+          logo: /logo_ef.png
+          label: Founder in Residence - Enterpreneur First, London
+          startdate: Mar 2022
+          enddate: May 2022
+        points:
+          - I was accepted into the 2022 cohort and spent 2 months working with dedicated individuals on blockchain/web3 ideas.
+          - Unfortunately, I did not find the right co-founder/idea.
+      - heading:
+          logo: /logo_google.png
+          label: "Software Engineer - Google, Munich"
+          startdate: Nov 2019
+          enddate: Dec 2021
+        points:
+          - >- 
+            Using data analysis on production logs to improve reliability across Google.
+            Used tensorflow, Go and Apache flume
+          - Came up with - and lead - a successful internal project combining data analysis and visualization.
+          - "**Google X** \"the moonshot factory\": Data analysis on an experimental wearable device. Owned whole Python codebase and training pipeline."
+      - heading:
+          logo: /logo_volkswagen.png
+          label: Deep/Machine Learning Engineer - Volkswagen, Munich
+          startdate: Jul 2018
+          enddate: Oct 2019
+        points:
+          - Worked as an applied machine learning engineer, mainly on computer vision for autonomous driving.
+          - Real time object detection, Model development, training, selection, compression and testing.
+          - PyTorch, Tensorflow, CUDA, C++, ...
+  - heading: Research Work
+    logos:
+      - /logo_stanford.png
+    subsections:
+      - heading:
+          logo: /logo_tum.png
+          label: Post Graduate Work - TUM, Munich
+          startdate: Jul 2017
+          enddate: Jun 2018
+        points:
+          - Uncertainty quantification in physical simulations using bayesian methods and machine learning.
+          - Design optimization under uncertainty.
+          - Collaborative development of a C++ research code (Full CI/CD pipeline).
+          - Visualization of complex simulation output using Paraview, Plotly, D3.js, ...
+          - Held several positions as teaching assistant.
+      - heading:
+          logo: /logo_stanford.png
+          label: Visiting Graduate Researcher - Stanford University, California
+          startdate: Oct 2016
+          enddate: Jul 2017
+        points:
+          - "Implemented gradient computation in a C++ fluid dynamics [code](https://bitbucket.org/frg/aero-f/src/master/)"
+          - "Application: Parametric shape optimization of flexible wings."
+          - Audited Stanford lecture series on machine learning by Andrew Ng.
+
+  - heading: Education
+    logos:
+      - /logo_tum.png
+    subsections:
+      - heading:
+          logo: /logo_tum.png
+          label: Post Graduate Researcher - Munich, Germany
+          startdate: Jul 2017
+          enddate: Jun 2018
+        degrees:
+          - Uncertainty quantification in physical simulations using bayesian methods and machine learning
+          - Design optimization. Collaborative development of a C++ HPC codebase.
+      - heading:
+          logo: /logo_tum.png
+          label: M.Sc. Mechanical Engineering - TUM, Munich
+          startdate: Oct 2015
+          enddate: Jun 2017
+        degrees:
+          - Majored in Computational Engineering and High Performance Computing.
+          - Visiting Researcher at Stanford University
+          - Overall Grade 1.6. Final theses 1.0.
+      - heading:
+          logo: /logo_tum.png
+          label: B.Sc. Mechanical Engineering - TUM, Munich
+          startdate: Oct 2012
+          enddate: Jun 2015
+        degrees:
+          - Majored in Mechanical Engineering
+          - Overall Grade 1.4. Final theses 1.0.
+      - heading:
+          label: Professional Certifications - Online, Multiple
+        points:
+          - Total of 16 professional certifications including
+          -  - "[Blockchain Developer Nanodegree - Udacity](https://confirm.udacity.com/PRDLGCYP)"
+             - "[5-part deep learning specialization -  Deeplearning.ai](https://coursera.org/share/ec095b18337aecea2c101552eeb97dd3)"
+             - "[Decentralized finance - Duke University](https://coursera.org/share/0be4aacea173ecab67e917e79c1ae954)"
+             - "[Full list on LinkedIn](https://www.linkedin.com/in/scheuclu)"
+
+
+# %-----------PROGRAMMING SKILLS-----------
+# \section{Technical Skills}
+#  \begin{itemize}[leftmargin=0.15in, label={}]
+#     \small{\item{
+#     \textbf{Blockchain}{: } \\
+#      \textbf{Languages}{: P} \\
+#      \textbf{Developer Tools}{: } \\
+#      \textbf{Libraries}{: }\\
+#      \textbf{Machine Learning}{: }
+#     }}
+#  \end{itemize}
+
+  - heading: Technical Skills
+    logos:
+      - /logo_python.png
+      - /logo_pytorch.png
+      - /logo_react.png
+      - /logo_sql.png
+      - /logo_linux.png
+      - /logo_typescript.png
+      - /logo_go.png
+      - /logo_ethereum.png
+      - /logo_aws.png
+    points:
+      - "**Languages**: Python, C++, Solidity, Go, SQL, Javascript, Bash"
+      - "**Frontend**: Next, React, CSS, SASS"
+      - "**Backend**: Postgres, SQL, API development, Databases, DevOps, CI/CD"
+      - "**Machine Learning**: Computer Vision, Recurrent Networks, Deep Learning, Model training and selection. Model compression."
+      - "**Blockchain**: Bitcoin, Ethereum, Solidity, web3.js, Smart-Contracts"
+      - "**Developer Tools**: Git, Docker, Google Cloud Platform, VIM, IntelliJ"
+      - "**Libraries**: Tensorflow, Pytorch, OpenMP, MPI, CUDA, Pandas, NumPy, Matplotlib, Plotly, Dash"
+
+
