@@ -4,19 +4,12 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus.flowables import HRFlowable, KeepTogether
-
+import os
 
 from utils import bullet_points
 
 
-document = SimpleDocTemplate(
-    "cv_lukas_scheucher.pdf",
-    pagesize=letter,
-    leftMargin=50,
-    rightMargin=50,
-    topMargin=30,
-    bottomMargin=50,
-)
+
 import re
 
 FONTSIZE_SECTION = 12
@@ -99,12 +92,22 @@ def header(name, mail=None, phone=None, github=None, linkedin=None):
     return lines
 
 
-if __name__ == "__main__":
+def process_file(yaml_path, pdf_path):
     # Specify the file path for the PDF
-    pdf_file = "example.pdf"
+    # pdf_file = "example.pdf"
 
-    infile = "cv.yaml"
-    with open(infile, "r") as f:
+
+    document = SimpleDocTemplate(
+        pdf_path,
+        pagesize=letter,
+        leftMargin=50,
+        rightMargin=50,
+        topMargin=30,
+        bottomMargin=50,
+    )
+
+    # infile = "cv.yaml"
+    with open(yaml_path, "r") as f:
         t = f.read()
         # t=markdown_links(t)
         try:
@@ -113,7 +116,7 @@ if __name__ == "__main__":
         except yaml.YAMLError as exc:
             print(exc)
 
-    pdf = canvas.Canvas(pdf_file, pagesize=letter)
+    pdf = canvas.Canvas(pdf_path, pagesize=letter)
     pdf.setFont("Courier-Oblique", 12)
     # Set the starting point for writing
 
@@ -174,4 +177,13 @@ if __name__ == "__main__":
         )
 
     document.build(doc)
-    print(f"PDF created successfully: {pdf_file}")
+    print(f"PDF created successfully: {pdf_path}")
+
+
+if __name__ == "__main__":
+    for f in os.listdir("inputs"):
+        if not f.endswith(".yaml"):
+            continue
+        yaml_path = f"inputs/{f}"
+        pdf_path = f"outputs/{f.replace('.yaml','.pdf')}"
+        process_file(yaml_path, pdf_path)
