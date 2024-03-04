@@ -9,7 +9,6 @@ import os
 from utils import bullet_points
 
 
-
 import re
 
 FONTSIZE_SECTION = 12
@@ -63,19 +62,19 @@ def header(name, mail=None, phone=None, github=None, linkedin=None):
     symbols = []
     if mail:
         symbols.append(
-            f'<a href="mailto:{mail}"><img src="mail-icon.png" height="4mm" width="4mm"/>   <b>{mail}</b></a>'
+            f'<a href="mailto:{mail}"><img src="resources/mail-icon.png" height="4mm" width="4mm"/>   <b>{mail}</b></a>'
         )
     if phone:
         symbols.append(
-            f'<a href="tel: {phone}"><img src="phone-icon.png" height="4mm" width="4mm"/>   <b>{phone}</b></a>'
+            f'<a href="tel: {phone}"><img src="resources/phone-icon.png" height="4mm" width="4mm"/>   <b>{phone}</b></a>'
         )
     if github:
         symbols.append(
-            f'<a href="https://www.github.com/{github}"><img src="github-icon.png" height="4mm" width="4mm"/>   <b>{github}</b></a>'
+            f'<a href="https://www.github.com/{github}"><img src="resources/github-icon.png" height="4mm" width="4mm"/>   <b>{github}</b></a>'
         )
     if linkedin:
         symbols.append(
-            f'<a href="https://www.linkedin.com/in/{linkedin}"><img src="linkedin-icon.png" height="4mm" width="4mm"/>   <b>{linkedin}</b></a>'
+            f'<a href="https://www.linkedin.com/in/{linkedin}"><img src="resources/linkedin-icon.png" height="4mm" width="4mm"/>   <b>{linkedin}</b></a>'
         )
 
     lines.append(Paragraph("&nbsp;&nbsp;|&nbsp;&nbsp;".join(symbols), style_socials))
@@ -95,7 +94,6 @@ def header(name, mail=None, phone=None, github=None, linkedin=None):
 def process_file(yaml_path, pdf_path):
     # Specify the file path for the PDF
     # pdf_file = "example.pdf"
-
 
     document = SimpleDocTemplate(
         pdf_path,
