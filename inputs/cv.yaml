@@ -6,7 +6,7 @@ email: lukas@scheuclu.com
 linkedin: scheuclu
 github: scheuclu
 # https://raw.githubusercontent.com/scheuclu/hugo_cv/main/pdfgen/cv.pdf
-downloadlink: https://drive.google.com/file/d/1cwTlfPPMLef-gv71QqaRxkU06rdi_qAi/view?usp=sharing
+# downloadlink: https://drive.google.com/file/d/1cwTlfPPMLef-gv71QqaRxkU06rdi_qAi/view?usp=sharing
 
 sections:
   - heading: Work Experience
@@ -23,9 +23,9 @@ sections:
           startdate: March 2023
           enddate: present
         points:
-          - I started as founding engineer, building our backtesting tool, visualization dashboard as well as our backend on GCP.
-          - I eventually took over as CTO. Here, I actively engage with customers. I am also in charge of hiring and technical management.
-          - I am also involved in fundraising and investor relations and we raised 1.5M from a tier-1 US VC.
+          - I actively engage with customers, shape the product and define the roadmap.
+          - Techincal lead of 5 engineers.
+          - I am also involved in fundraising and investor relations. Raised 2 million from Andreessen Horowitz and other top tier investors.
       - heading:
           logo: /logo_toptal.png
           label: Freelance Software Engineer, Remote
@@ -42,7 +42,7 @@ sections:
           enddate: May 2022
         points:
           - I was accepted into the 2022 cohort and spent 2 months working with dedicated individuals on blockchain/web3 ideas.
-          - Unfortunately, I did not find the right co-founder/idea.
+          - Entrepreneur First is an international talent investor, which supports individuals in building technology companies.
       - heading:
           logo: /logo_google.png
           label: "Software Engineer - Google, Munich"
