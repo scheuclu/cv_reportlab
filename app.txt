@@ -1,0 +1,25 @@
+import layout
+import streamlit as st
+from streamlit_ace import st_ace
+
+(
+    style_section,
+    style_subsection,
+    style_date,
+    style_section_points,
+    style_subsection_points,
+    style_cv_title,
+) = layout.get_style()
+header = layout.header(
+    name="Lukas Scheucher",
+    mail="lukas@scheuclu.com",
+    phone="0043-677-6100-3595",
+    github="scheuclu",
+    linkedin="scheuclu",
+)
+
+# Spawn a new Ace editor
+content = st_ace()
+
+# Display editor's content as you type
+content

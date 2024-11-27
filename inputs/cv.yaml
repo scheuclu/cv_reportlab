@@ -1,6 +1,6 @@
 #CV_TITLE: standard_cv
 name: Lukas Scheucher
-email: lukas@scheuclu.com
+email: scheuclu@gmail.com
 #phone: '2125121957'
 # website: scheuclu.com
 linkedin: scheuclu
@@ -19,29 +19,29 @@ sections:
 
       - heading:
           logo: /logo_compass.png
-          label: CTO - Compass Labs, London
-          startdate: March 2023
+          label: CTO/co-founder - Compass Labs, London
+          startdate: June 2022
           enddate: present
         points:
-          - I actively engage with customers, shape the product and define the roadmap.
-          - Techincal lead of 5 engineers.
-          - I am also involved in fundraising and investor relations. Raised 2 million from Andreessen Horowitz and other top tier investors.
-      - heading:
-          logo: /logo_toptal.png
-          label: Freelance Software Engineer, Remote
-          startdate: May 2022
-          enddate: March 2023
-        points:
-          - Working as a freelance engineer on projects focusing on data-science and backend engineering.
-          - Thanks to my generalist background, I've been helping early-stage startups building up their MVPs, setting up their backend and CI/CD pipelines, improving their code, etc.
-          - Working with Toptal, A.team and other platforms.
+          - Developed the product zero to one. We are on a SaaS model, selling to larger financial institutions.
+          - Hired (and now leading) 5 engineers accross the stack.
+          - Raised 2 million from Andreessen Horowitz and other top tier investors.
+      # - heading:
+      #     logo: /logo_toptal.png
+      #     label: Freelance Software Engineer, Remote
+      #     startdate: May 2022
+      #     enddate: March 2023
+      #   points:
+      #     - Worked as a freelance engineer on projects focusing on data-science and backend engineering.
+      #     - Thanks to my generalist background, I've been helping early-stage startups building up their MVPs, setting up their backend and CI/CD pipelines, improving their code, etc.
+      #     - Worked with Toptal, A.team and other platforms.
       - heading:
           logo: /logo_ef.png
           label: Founder in Residence - Enterpreneur First, London
           startdate: Mar 2022
           enddate: May 2022
         points:
-          - I was accepted into the 2022 cohort and spent 2 months working with dedicated individuals on blockchain/web3 ideas.
+          - Accepted into the 2022 cohort and spent 3 months working with dedicated individuals on blockchain/web3 ideas.
           - Entrepreneur First is an international talent investor, which supports individuals in building technology companies.
       - heading:
           logo: /logo_google.png
@@ -153,7 +153,7 @@ sections:
     points:
       - "**Languages**: Python, C++, Solidity, Go, SQL, Javascript, Bash"
       - "**Frontend**: Next, React, CSS, SASS"
-      - "**Backend**: Postgres, SQL, API development, Databases, DevOps, CI/CD"
+      - "**Backend**: Postgres, SQL, API development, Databases, DevOps, CI/CD, Terraform"
       - "**Machine Learning**: Computer Vision, Recurrent Networks, Deep Learning, Model training and selection. Model compression."
       - "**Blockchain**: Bitcoin, Ethereum, Solidity, web3.js, Smart-Contracts"
       - "**Developer Tools**: Git, Docker, Google Cloud Platform, VIM, IntelliJ"

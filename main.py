@@ -1,15 +1,13 @@
-from reportlab.pdfgen import canvas
-import yaml
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus.flowables import HRFlowable, KeepTogether
 import os
 
+import yaml
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.pdfgen import canvas
+from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
+from reportlab.platypus.flowables import HRFlowable
+
 from utils import bullet_points
-
-
-import re
 
 FONTSIZE_SECTION = 12
 FONTGAP_SECTION = 1.2
@@ -17,14 +15,14 @@ FONTGAP_SECTION = 1.2
 FONTSIZE_BODY = 10
 FONTGAP_BODY = 1.2
 
-MARGIN_LEFT = 20
-MARGIN_RIGHT = 20
+MARGIN_LEFT = 10
+MARGIN_RIGHT = 10
 MARGIN_TOP = 40
 
 
 styles = getSampleStyleSheet()
 style_section = styles["Heading3"].clone("section")
-style_section.fontName = "Helvetica-Bold"
+# style_section.fontName = "Courier"
 style_section.fontSize = 14
 style_section.spaceBefore = 16
 
@@ -33,7 +31,7 @@ style_subsection = styles["Heading4"].clone("section")
 style_subsection.leading = 0
 style_subsection.spaceAfter = 0
 style_subsection.spaceBefore = 12
-style_subsection.fontName = "Helvetica-bold"
+# style_subsection.fontName = "Helvetica-bold"
 
 
 style_date = styles["BodyText"].clone("date")
@@ -62,19 +60,23 @@ def header(name, mail=None, phone=None, github=None, linkedin=None):
     symbols = []
     if mail:
         symbols.append(
-            f'<a href="mailto:{mail}"><img src="resources/mail-icon.png" height="4mm" width="4mm"/>   <b>{mail}</b></a>'
+            f'<a href="mailto:{mail}">\
+                <img src="resources/mail-icon.png" height="4mm" width="4mm"/>   <b>{mail}</b></a>'
         )
     if phone:
         symbols.append(
-            f'<a href="tel: {phone}"><img src="resources/phone-icon.png" height="4mm" width="4mm"/>   <b>{phone}</b></a>'
+            f'<a href="tel: {phone}">\
+                <img src="resources/phone-icon.png" height="4mm" width="4mm"/>   <b>{phone}</b></a>'
         )
     if github:
         symbols.append(
-            f'<a href="https://www.github.com/{github}"><img src="resources/github-icon.png" height="4mm" width="4mm"/>   <b>{github}</b></a>'
+            f'<a href="https://www.github.com/{github}">\
+            <img src="resources/github-icon.png" height="4mm" width="4mm"/>   <b>{github}</b></a>'
         )
     if linkedin:
         symbols.append(
-            f'<a href="https://www.linkedin.com/in/{linkedin}"><img src="resources/linkedin-icon.png" height="4mm" width="4mm"/>   <b>{linkedin}</b></a>'
+            f'<a href="https://www.linkedin.com/in/{linkedin}">\
+                <img src="resources/linkedin-icon.png" height="4mm" width="4mm"/>   <b>{linkedin}</b></a>'
         )
 
     lines.append(Paragraph("&nbsp;&nbsp;|&nbsp;&nbsp;".join(symbols), style_socials))
@@ -98,8 +100,8 @@ def process_file(yaml_path, pdf_path):
     document = SimpleDocTemplate(
         pdf_path,
         pagesize=letter,
-        leftMargin=50,
-        rightMargin=50,
+        leftMargin=20,
+        rightMargin=20,
         topMargin=30,
         bottomMargin=50,
     )
@@ -110,20 +112,13 @@ def process_file(yaml_path, pdf_path):
         # t=markdown_links(t)
         try:
             cv = yaml.safe_load(t)
-            ###print(result)
         except yaml.YAMLError as exc:
             print(exc)
 
     pdf = canvas.Canvas(pdf_path, pagesize=letter)
-    pdf.setFont("Courier-Oblique", 12)
-    # Set the starting point for writing
-
-    width, height = letter
-    center_x = width / 2
-    y = height - MARGIN_TOP
+    pdf.setFont("Courier", 24)
 
     doc = []
-    title = Paragraph("Lukas Scheucher", style_cv_title)
 
     doc += header(
         name="Lukas Scheucher",
@@ -152,6 +147,8 @@ def process_file(yaml_path, pdf_path):
                 else None
             )
             subsection_points = subsection["points"] if "points" in subsection else []
+            # print(subsection_points)
+            # input()
             subsection_degrees = (
                 subsection["degrees"] if "degrees" in subsection else []
             )

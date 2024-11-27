@@ -1,6 +1,7 @@
 import re
-from reportlab.platypus import Paragraph
+
 from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import Paragraph
 
 styles = getSampleStyleSheet()
 
