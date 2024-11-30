@@ -23,9 +23,9 @@ sections:
           startdate: June 2022
           enddate: present
         points:
-          - Developed the product zero to one. We are on a SaaS model, selling to larger financial institutions.
-          - Hired (and now leading) 5 engineers accross the stack.
-          - Raised 2 million from Andreessen Horowitz and other top tier investors.
+          - I built a backtesting ad execution framework to onboard institutions easily into the digital assets space.
+          - Personally hired (and now leading) 5 engineers accross the stack.
+          - Raised <u>2M USD</u> of VC funding, among other from <u>a16z</u> and other top tier investors.
       # - heading:
       #     logo: /logo_toptal.png
       #     label: Freelance Software Engineer, Remote
@@ -41,28 +41,27 @@ sections:
           startdate: Mar 2022
           enddate: May 2022
         points:
-          - Accepted into the 2022 cohort and spent 3 months working with dedicated individuals on blockchain/web3 ideas.
-          - Entrepreneur First is an international talent investor, which supports individuals in building technology companies.
+          - I went through the <u>Entrepreneur First accelerator</u> where I explored several ideas, which eventually culminated in Compass Labs.
+          - Entrepreneur First is a global talent investor that helps individuals find co-founders, develop startup ideas, and build high-growth technology companies from scratch.
       - heading:
           logo: /logo_google.png
-          label: "Software Engineer - Google, Munich"
+          label: "Software Engineer - Google X, Munich"
           startdate: Nov 2019
           enddate: Dec 2021
         points:
           - >- 
-            Using data analysis on production logs to improve reliability across Google.
-            Used tensorflow, Go and Apache flume
-          - Came up with - and lead - a successful internal project combining data analysis and visualization.
-          - "**Google X** \"the moonshot factory\": Data analysis on an experimental wearable device. Owned whole Python codebase and training pipeline."
+            I joined Google as an AI software engineer. Initially in working on internal tools before moving to GoogleX.
+          - Ideated and build an MVP for an AI-based monitoring tool to detect anomalies and prevent outages. Spun out into separate team.
+          - At <u>Google X</u> I worked on a waearable device, where I owned the ML training pipelines(Python). Recently featured in time magazine.
       - heading:
           logo: /logo_volkswagen.png
           label: Deep/Machine Learning Engineer - Volkswagen, Munich
           startdate: Jul 2018
           enddate: Oct 2019
         points:
-          - Worked as an applied machine learning engineer, mainly on computer vision for autonomous driving.
-          - Real time object detection, Model development, training, selection, compression and testing.
-          - PyTorch, Tensorflow, CUDA, C++, ...
+          - I was responsible for developing the 2D perception pipeline in a push for autonomous driving.
+          - Model resaerch, development, training, testing and eventually deployment to an embedded Nvidia device in the car.
+          - Real time object detection, Model development, training, selection, compression and testing. PyTorch, Tensorflow, CUDA, C++, ...
   - heading: Research Work
     logos:
       - /logo_stanford.png
@@ -73,20 +72,17 @@ sections:
           startdate: Jul 2017
           enddate: Jun 2018
         points:
-          - Uncertainty quantification in physical simulations using bayesian methods and machine learning.
-          - Design optimization under uncertainty.
+          - Uncertainty quantification and optimization in physical simulations using bayesian methods and machine learning.
           - Collaborative development of a C++ research code (Full CI/CD pipeline).
           - Visualization of complex simulation output using Paraview, Plotly, D3.js, ...
-          - Held several positions as teaching assistant.
       - heading:
           logo: /logo_stanford.png
           label: Visiting Graduate Researcher - Stanford University, California
           startdate: Oct 2016
           enddate: Jul 2017
         points:
-          - "Implemented gradient computation in a C++ fluid dynamics [code](https://bitbucket.org/frg/aero-f/src/master/)"
+          - "Implemented gradient computation in a C++ fluid dynamics [code](https://bitbucket.org/frg/aero-f/src/master/)". This code is used by the US army to develop new planes.
           - "Application: Parametric shape optimization of flexible wings."
-          - Audited Stanford lecture series on machine learning by Andrew Ng.
 
   - heading: Education
     logos:

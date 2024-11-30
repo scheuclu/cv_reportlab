@@ -3,11 +3,19 @@ import os
 import yaml
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 from reportlab.platypus.flowables import HRFlowable
 
 from utils import bullet_points
+
+# Register a custom TrueType font
+pdfmetrics.registerFont(TTFont("Calibri", "./calibri-regular.ttf"))
+pdfmetrics.registerFont(TTFont("Calibri-bold", "./calibri-bold.ttf"))
+pdfmetrics.registerFont(TTFont("Calibri-italic", "./calibri-italic.ttf"))
+
 
 FONTSIZE_SECTION = 12
 FONTGAP_SECTION = 1.2
@@ -20,37 +28,56 @@ MARGIN_RIGHT = 10
 MARGIN_TOP = 40
 
 
+# def get_style(
+#         font:str,
+#         size:int,
+#         spaceBefore:int,
+#         color: str = '#000000'
+# )
+
+
 styles = getSampleStyleSheet()
 style_section = styles["Heading3"].clone("section")
-# style_section.fontName = "Courier"
+style_section.fontName = "Calibri-bold"
 style_section.fontSize = 14
 style_section.spaceBefore = 16
+style_section.textColor = "#303030"
+# ---
 
 
 style_subsection = styles["Heading4"].clone("section")
 style_subsection.leading = 0
 style_subsection.spaceAfter = 0
 style_subsection.spaceBefore = 12
-# style_subsection.fontName = "Helvetica-bold"
+style_subsection.fontName = "Calibri-bold"
+# ---
 
 
 style_date = styles["BodyText"].clone("date")
 style_date.alignment = 2  # 0=left, 1=center, 2=right
 style_date.spaceBefore = 0
-style_date.spaceAfter = 4
+style_date.spaceAfter = 4  # After founder in residence
+# ---
 
 
 style_section_points = styles["Normal"].clone("style_section_points")
+style_section_points.fontName = "Calibri"
+# ---
+
+
 style_subsection_points = styles["Normal"].clone("style_section_points")
+style_subsection_points.fontName = "Calibri"
+# ---
 
 style_cv_title = styles["Heading1"].clone("style_cv_title")
 style_cv_title.fontSize = 28
 style_cv_title.spaceAfter = 14
-# style_cv_title.textColor='#092f61'
+style_cv_title.fontName = "Calibri"
+# ---
 
 
 style_socials = styles["Normal"].clone("style_socials")
-# style_socials.textColor='#092f61'
+# ---
 
 
 def header(name, mail=None, phone=None, github=None, linkedin=None):
@@ -61,22 +88,22 @@ def header(name, mail=None, phone=None, github=None, linkedin=None):
     if mail:
         symbols.append(
             f'<a href="mailto:{mail}">\
-                <img src="resources/mail-icon.png" height="4mm" width="4mm"/>   <b>{mail}</b></a>'
+                <img src="resources/email.png" height="4mm" width="4mm"/>   <b>{mail}</b></a>'
         )
     if phone:
         symbols.append(
             f'<a href="tel: {phone}">\
-                <img src="resources/phone-icon.png" height="4mm" width="4mm"/>   <b>{phone}</b></a>'
+                <img src="resources/telephone.png" height="4mm" width="4mm"/>   <b>{phone}</b></a>'
         )
     if github:
         symbols.append(
             f'<a href="https://www.github.com/{github}">\
-            <img src="resources/github-icon.png" height="4mm" width="4mm"/>   <b>{github}</b></a>'
+            <img src="resources/github.png" height="4mm" width="4mm"/>   <b>{github}</b></a>'
         )
     if linkedin:
         symbols.append(
             f'<a href="https://www.linkedin.com/in/{linkedin}">\
-                <img src="resources/linkedin-icon.png" height="4mm" width="4mm"/>   <b>{linkedin}</b></a>'
+                <img src="resources/linkedin.png" height="4mm" width="4mm"/>   <b>{linkedin}</b></a>'
         )
 
     lines.append(Paragraph("&nbsp;&nbsp;|&nbsp;&nbsp;".join(symbols), style_socials))
@@ -116,13 +143,13 @@ def process_file(yaml_path, pdf_path):
             print(exc)
 
     pdf = canvas.Canvas(pdf_path, pagesize=letter)
-    pdf.setFont("Courier", 24)
+    # pdf.setFont("ZapfDingbats", 24)
 
     doc = []
 
     doc += header(
         name="Lukas Scheucher",
-        mail="lukas@scheuclu.com",
+        mail="scheuclu@gmail.com",
         phone="0043-677-6100-3595",
         github="scheuclu",
         linkedin="scheuclu",
@@ -147,8 +174,6 @@ def process_file(yaml_path, pdf_path):
                 else None
             )
             subsection_points = subsection["points"] if "points" in subsection else []
-            # print(subsection_points)
-            # input()
             subsection_degrees = (
                 subsection["degrees"] if "degrees" in subsection else []
             )
@@ -182,3 +207,26 @@ if __name__ == "__main__":
         yaml_path = f"inputs/{f}"
         pdf_path = f"outputs/{f.replace('.yaml','.pdf')}"
         process_file(yaml_path, pdf_path)
+    from reportlab.pdfbase import pdfmetrics
+
+    # Get a list of all registered fonts
+    available_fonts = pdfmetrics.getRegisteredFontNames()
+
+    # Print each font
+    print("Available Fonts in ReportLab:")
+    for font in available_fonts:
+        print(font)
+
+
+# test=['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__firstlineno__',
+#       '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__',
+#       '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
+#       '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__static_attributes__', '__str__',
+#       '__subclasshook__', '__weakref__', '_setKwds', 'alignment', 'allowOrphans', 'allowWidows',
+#       'backColor', 'borderColor', 'borderPadding', 'borderRadius', 'borderWidth', 'bulletAnchor'
+#       'bulletFontName', 'bulletFontSize', 'bulletIndent', 'clone', 'defaults', 'embeddedHyphenation',
+#       'endDots', 'firstLineIndent', 'fontName', 'fontSize', 'hyphenationLang', 'justifyBreaks',
+#       'justifyLastLine', 'leading', 'leftIndent', 'linkUnderline', 'listAttrs', 'name', 'parent',
+#       'refresh', 'rightIndent', 'spaceAfter', 'spaceBefore', 'spaceShrinkage', 'splitLongWords',
+#       'strikeColor', 'strikeGap', 'strikeOffset', 'strikeWidth', 'textColor', 'textTransform',
+#       'underlineColor', 'underlineGap', 'underlineOffset', 'underlineWidth', 'uriWasteReduce', 'wordWrap']

@@ -37,13 +37,10 @@ def _bold(s):
         result += r[i]
         i = (i + 1) % 2
         result += spp
-
-    # print("--",result)
     return result
 
 
 def _markdown_links(s):
-    print(s)
     site = re.compile("\[(.*)\]").search(s)
     url = re.compile("\((.*)\)").search(s)
 
@@ -51,7 +48,6 @@ def _markdown_links(s):
     # "aaa  <a href='TODO'> word </a>
 
     if site is not None and url is not None:
-        print(site.group(1), url.group(1))
         # return s
         s = s.replace(
             f"[{site.group(1)}]({url.group(1)})",
