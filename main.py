@@ -8,13 +8,25 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 from reportlab.platypus.flowables import HRFlowable
+from reportlab.platypus import Image  # Import Image
 
-from utils import bullet_points
+from utils import bullet_points, simple_text
 
 # Register a custom TrueType font
 pdfmetrics.registerFont(TTFont("Calibri", "./calibri-regular.ttf"))
-pdfmetrics.registerFont(TTFont("Calibri-bold", "./calibri-bold.ttf"))
-pdfmetrics.registerFont(TTFont("Calibri-italic", "./calibri-italic.ttf"))
+pdfmetrics.registerFont(TTFont("Calibri-Bold", "./calibri-bold.ttf"))
+pdfmetrics.registerFont(TTFont("Calibri-Italic", "./calibri-italic.ttf"))
+pdfmetrics.registerFont(TTFont("Calibri-BoldItalic", "./calibri-bold-italic.ttf"))
+# pdfmetrics.registerFontFamily(family="Calibri", normal=)
+
+# Register the font family
+pdfmetrics.registerFontFamily(
+    "Calibri",
+    normal="Calibri",
+    bold="Calibri-Bold",
+    italic="Calibri-Italic",
+    boldItalic="Calibri-BoldItalic"
+)
 
 
 FONTSIZE_SECTION = 12
@@ -38,10 +50,11 @@ MARGIN_TOP = 40
 
 styles = getSampleStyleSheet()
 style_section = styles["Heading3"].clone("section")
-style_section.fontName = "Calibri-bold"
+style_section.fontName = "Calibri-Bold"
 style_section.fontSize = 14
 style_section.spaceBefore = 16
 style_section.textColor = "#303030"
+style_section.underline = True  # Ensure links are underlined
 # ---
 
 
@@ -49,7 +62,8 @@ style_subsection = styles["Heading4"].clone("section")
 style_subsection.leading = 0
 style_subsection.spaceAfter = 0
 style_subsection.spaceBefore = 12
-style_subsection.fontName = "Calibri-bold"
+style_subsection.fontName = "Calibri-Bold"
+style_subsection.underline = True  # Ensure links are underlined
 # ---
 
 
@@ -62,6 +76,12 @@ style_date.spaceAfter = 4  # After founder in residence
 
 style_section_points = styles["Normal"].clone("style_section_points")
 style_section_points.fontName = "Calibri"
+# ---
+
+style_prompt = styles["Normal"].clone("style_prompt")
+style_prompt.fontName = "Calibri"
+style_prompt.fontSize = 1
+style_prompt.textColor = "#ffffff"
 # ---
 
 
@@ -150,16 +170,28 @@ def process_file(yaml_path, pdf_path):
     doc += header(
         name="Lukas Scheucher",
         mail="scheuclu@gmail.com",
-        phone="0043-677-6100-3595",
+        # phone="0043-677-6100-3595",
         github="scheuclu",
         linkedin="scheuclu",
     )
 
     for section in cv["sections"]:
         heading = section["heading"]
-        doc.append(Paragraph(f"<u>{heading}</u>", style_section))
+
+
+        heading_line = f"<u>{heading}</u>"
+        # if 'logos' in section:
+        #     for logo in section['logos']:
+        #         heading_line+=f"<img src='{logo}' height='4mm' width='4mm' valign='middle'/> "
+        doc.append(Paragraph(heading_line, style_section))
+
         subsections = section["subsections"] if "subsections" in section else []
         section_points = section["points"] if "points" in section else []
+        section_text = section["text"] if "text" in section else []
+
+        if 'bullets' in section:
+            print(section['bullets'])
+            assert 1==2
 
         for subsection in subsections:
             subsection_heading = subsection["heading"]["label"]
@@ -173,6 +205,14 @@ def process_file(yaml_path, pdf_path):
                 if "enddate" in subsection["heading"]
                 else None
             )
+
+            subsetion_text = subsection["text"] if "text" in subsection else []
+
+            if 'bullets' in subsection:
+                print(subsection['bullets'])
+                assert 1 == 2
+            subsection_bullets=subsection["bullets"] if 'bullets' in subsection else []
+
             subsection_points = subsection["points"] if "points" in subsection else []
             subsection_degrees = (
                 subsection["degrees"] if "degrees" in subsection else []
@@ -184,7 +224,9 @@ def process_file(yaml_path, pdf_path):
                 doc.append(Spacer(1, 12))
             doc += bullet_points(subsection_points, style=style_subsection_points)
             doc += bullet_points(subsection_degrees, style=style_subsection_points)
+            doc += simple_text(subsetion_text, style=style_subsection_points) #TODO
         doc += bullet_points(section_points, style=style_section_points)
+        doc += simple_text(section_text, style=style_section_points)
         doc.append(
             HRFlowable(
                 width="100%",
@@ -195,6 +237,19 @@ def process_file(yaml_path, pdf_path):
                 spaceAfter=0,
             )
         )
+
+    # img = Image('./logos/google.png', width=20, height=20)  # Adjust width and height as needed
+    # # doc.append(img)
+    # doc.append(Paragraph([heading_line, img], style_section))
+
+
+    if 'prompt' in cv:
+        print(cv['prompt'])
+        for sentence in cv['prompt']:
+            doc += simple_text(sentence, style=style_prompt)
+
+
+
 
     document.build(doc)
     print(f"PDF created successfully: {pdf_path}")
