@@ -20,31 +20,47 @@ sections:
       - heading:
           logo: /logo_compass.png
           label: CTO - Compass Labs, London
-          startdate: April 2022
+          startdate: 2023
           enddate: present
         points:
-          - Fully developed the initial product, a backtesting and analyzation tool for trading in crypto. Python, Solitidy, NextJS, Cloud, ...
-          - Hired and leading a team of 5 engineers to expand and add features. Still averaging over 2000 Github contributions per year.
-          - Raised close to <u>2M USD</u> of VC funding, including <u>a16z</u> and other top tier investors. Onboarded institutional clients.
+          - Developed the initial product, a backtesting and analysis tool for crypto traders. Using Python, Solidity, NextJS, and more. We provide a a complete solution, from data-sourcing to strategy development and testing to result analysis - our product covers it all.
+          - Hired and leading a team of 5 engineers to expand and add features. Still averaging over 2,000 GitHub contributions per year.
+          - Raised close to <u>2M USD</u> of VC funding, including <u>a16z</u> and other top-tier investors. Onboarded institutional clients.
+          - Regularly attending and speaking at conferences, meeting with industry stakeholders, organizing hackathons, and more.
+#          - Participated in a 8 week on-site program by Andreesen Horrowitz in London.
+        # points:
+        #   - I built a backtesting ad execution framework to onboard institutions easily into the digital assets space.<br></br>
+        #   - Personally hired (and now leading) 5 engineers across the stack.
+        #   - Raised <u>2M USD</u> of VC funding, including <u>a16z</u> and other top tier investors.
+
+#      - heading:
+#          logo: /logo_ef.png
+#          label: Founder in Residence - Entrepreneur First, London
+#          startdate: Mar 2022
+#          enddate: May 2022
+#        text: |
+#          I went through the <u>Entrepreneur First accelerator</u> where I explored several ideas, which eventually culminated in Compass Labs.
+#          Entrepreneur First is a global talent investor that helps individuals find co-founders, develop startup ideas, and build high-growth technology companies from scratch.
+#
 
       - heading:
           logo: /logo_google.png
           label: "Software Engineer - Google X, Munich"
-          startdate: Nov 2019
-          enddate: Dec 2021
+          startdate: 2019
+          enddate: 2022
         points:
-          - Worked as an Applied AI engineer at GoogleX(Moonshots), where I owned the AI training pipeline. Pytorch, Docker, Kubernetes.
-          - Ideated and built an internal ML model for monitoring Googles servers. Toool was used to monitor millions of machines in production.
-          - Conistently rated as "Strongly Execeeds Expectations"
+          - Worked as an Applied AI engineer at Google X (Moonshots), where I owned the AI training pipeline. PyTorch, Docker, Kubernetes.
+          - Ideated and built an internal ML model for monitoring Google's servers. Tool was used to monitor millions of machines in production.
+          - Recieved consistent rating of "Strongly Exceeds Expectations". Promoted after first year.
       - heading:
           logo: /logo_volkswagen.png
           label: Deep/Machine Learning Engineer - Volkswagen, Munich
-          startdate: Jul 2018
-          enddate: Oct 2019
+          startdate: 2018
+          enddate: 2019
         points:
-          - Development of a 2D perception model for autonomous driving. Using Convolutional Neural Networks. Pytorch, CUDA, C++.
-          - Researched and developed the models, then orchestrated the training and optimization loop. Built analyisis tools.
-          - Converted the final model to run on the embedded in-car device. Quantization, pruning and TensorRT.
+          - Developed a 2D perception model for autonomous driving using Convolutional Neural Networks. PyTorch, CUDA, C++.
+          - Researched and developed the models, then orchestrated the training and optimization loop. Built analysis tools.
+          - Converted the final model to run on the embedded in-car device. Using quantization, pruning, and TensorRT.
 
   - heading: Education/Research Work
     logos:
@@ -53,31 +69,22 @@ sections:
       - heading:
           logo: /logo_tum.png
           label: M.Sc. - TUM, Engineering Mechanics. Focus Aerospace, Munich
-          startdate: Sep 2015
-          enddate: Jun 2017
+          startdate: 2015
+          enddate: 2017
         points:
-          - Worked on HPC codebased(simulating fluid flow around aircraft). Distrbuted over 100s to 1000s of machines. C++, MPI, OpenMP
-          - Research in uncertainty quantification in physical simulations using bayesian methods and machine learning.
-          - Design optimization. Collaborative development of a C++ HPC codebase.
-          - Finished my bachelors degree top 1%
+          - Worked on an HPC codebase (simulating fluid flow around aircraft). Distributed over 100s to 1000s of machines. C++, MPI, OpenMP.
+          - Research in uncertainty quantification in physical simulations using Bayesian methods and machine learning.
+          - Worked on shape optimization of supersonic aircraft wings. Collaborative development of a C++ HPC codebase.
+          - Finished my bachelor's degree in the top 1%.
 
       - heading:
           logo: /logo_stanford.png
           label: Visiting Graduate Researcher - Stanford University, California
-          startdate: Oct 2016
-          enddate: Jul 2017
-        text: |
-          Implemented gradient computation in a C++ fluid dynamics [code.](https://bitbucket.org/frg/aero-f/src/master/)
-          This code is used by the US Army to develop new planes. **Application:** Parametric shape optimization of flexible wings.
-
-      - heading:
-          label: Professional Certifications - Online, Multiple
-        text: |
-          Over the years, I have been keeping up with trends and technologies through courses. Among others: [Blockchain Developer Nanodegree,](https://confirm.udacity.com/PRDLGCYP) 
-          [Deep learning specialization,](https://coursera.org/share/ec095b18337aecea2c101552eeb97dd3) 
-          [Decentralized finance by Duke University,](https://coursera.org/share/0be4aacea173ecab67e917e79c1ae954)  
-          [Full list on LinkedIn](https://www.linkedin.com/in/scheuclu)
-
+          startdate: 2016
+          enddate: 2017
+        points:
+          - Implemented gradient computation in a C++ fluid dynamics [code. ](https://bitbucket.org/frg/aero-f/src/master/)This code is used by the US Army to develop new planes.
+          - My final project/thesis on coupling the fluid and solid mechanics code received the best possible grade.
 
   - heading: Technical Skills
     logos:
@@ -94,11 +101,11 @@ sections:
       - "**Languages**: Python, C++, Solidity, Go, SQL, JavaScript, Bash"
       - "**Frontend**: Next, React, Electron, CSS, SASS"
       - "**Backend**: Node.js, Databases, SQL, API development, DevOps, CI/CD, Terraform"
-      - "**Machine Learning**: Computer Vision, Recurrent Networks, Deep Learning, Model training and selection. Model compression."
-      - "**Blockchain**: Bitcoin, Ethereum, Solidity, web3.js, Smart-Contracts"
+      - "**Machine Learning**: Computer Vision, Recurrent Networks, Deep Learning, Model training and selection, model compression."
+      - "**Blockchain**: Bitcoin, Ethereum, Solidity, web3.js, Smart Contracts"
       - "**Developer Tools**: Git, Docker, Google Cloud Platform, VIM, IntelliJ, AI tools for developers"
-#      - "**Libraries**: Tensorflow, Pytorch, OpenMP, MPI, CUDA, Pandas, NumPy, Matplotlib, Plotly, Dash, Streamlit, ..."
+      - "**Libraries**: Tensorflow, Pytorch, OpenMP, MPI, CUDA, Pandas, NumPy, Matplotlib, Plotly, Dash, Streamlit, ..."
 
   - heading: Interests/Hobbies
     points:
-      - Scuba diving(Dive Master), Hiking, Skiing, forestry
+      - Scuba diving (Dive Master), hiking, skiing, forestry
