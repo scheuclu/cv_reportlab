@@ -8,6 +8,10 @@ github: scheuclu
 # https://raw.githubusercontent.com/scheuclu/hugo_cv/main/pdfgen/cv.pdf
 # downloadlink: https://drive.google.com/file/d/1cwTlfPPMLef-gv71QqaRxkU06rdi_qAi/view?usp=sharing
 
+#headline: CTO & AI Engineer | Built VC-Backed Tech from 0→1 | Deep Tech, Crypto & Scalable ML
+#headline: AI/ML Specialist with Deep Crypto & HPC Experience | Ex-Google X | CTO at VC-Backed Fintech
+#headline: Engineer Turned CTO | Crypto, Deep Learning, and Scalable Systems | Ex-Google, Ex-Stanford
+
 sections:
   - heading: Work Experience
     logos:
@@ -24,7 +28,7 @@ sections:
           enddate: present
         points:
           - Developed the initial product, a backtesting and analysis tool for crypto traders using Python, Solidity, NextJS, and more. We provide a complete solution, from data sourcing to strategy development and testing to result analysis—our product covers it all.
-          - Leading a team of 5 engineers to expand and add features. Still averaging over 2,000 GitHub contributions per year.
+          - Leading a team of 5 engineers to expand and add features. Personally contributed code to Coinbase and Langchain.
           - Raised close to <u>2M USD</u> in VC funding, including <u>a16z</u> and other top-tier investors, and onboarded institutional clients.
           - Regularly attend and speak at conferences, meet with industry stakeholders, organize hackathons, and more.
 #          - Participated in an 8-week on-site program by Andreessen Horowitz in London.
@@ -57,7 +61,7 @@ sections:
         points:
           - Developed a 2D perception model for autonomous driving using Convolutional Neural Networks (PyTorch, CUDA, C++).
           - Researched and built the models, then orchestrated the training and optimization loop, along with creating analysis tools.
-          - Converted the final model to run on an embedded in-car device using quantization, pruning, and TensorRT.
+          - Converted the final model to run on an embedded in-car device using quantization, pruning, and TensorRT. This involved low level C++ development on an embedded Nvidia device.
 
   - heading: Education/Research Work
     logos:
@@ -69,10 +73,19 @@ sections:
           startdate: 2015
           enddate: 2017
         points:
-          - Worked on an HPC codebase (simulating fluid flow around aircraft), distributed over 100s to 1000s of machines (C++, MPI, OpenMP).
+          - Worked on an HPC codebase (simulating fluid flow around aircraft), distributed over 10K+ CPUs (C++, MPI, OpenMP).
           - Researched uncertainty quantification in physical simulations using Bayesian methods and machine learning.
-          - Contributed to shape optimization of supersonic aircraft wings through a collaborative C++ HPC codebase.
-          - Finished the bachelor’s degree in the top 1%.
+          - Shape optimization of supersonic aircraft wings through a collaborative C++ HPC codebase. Bayesian Optimization.
+          -
+
+      - heading:
+          logo: /logo_tum.png
+          label: B.Sc. - TUM, Engineering Mechanics, Munich
+          startdate: 2012
+          enddate: 2015
+        points:
+          - Heavy focus on computational methods. Math and Physics tutor. Several Student Researcher positions.
+          - Consistently ranked top in class. Overall grade 1.4 (Thesis 1.0)
 
       - heading:
           logo: /logo_stanford.png
@@ -82,7 +95,6 @@ sections:
         points:
           - Implemented gradient computation in a C++ fluid dynamics [code. ](https://bitbucket.org/frg/aero-f/src/master/)This code is used by the US Army to develop new aircraft.
           - My final project/thesis on coupling the fluid and solid mechanics codes received the highest possible grade.
-
   - heading: Technical Skills
     logos:
       - "./logos/logo_python.png"
@@ -97,11 +109,11 @@ sections:
     points:
       - "**Languages**: Python, C++, Solidity, Go, SQL, JavaScript, Bash"
       - "**Frontend**: Next, React, Electron, CSS, SASS"
-      - "**Backend**: Node.js, Databases, SQL, API development, DevOps, CI/CD, Terraform"
+      - "**Backend**: Node.js, Databases, SQL, APIs, DevOps, CI/CD, Terraform"
       - "**Machine Learning**: Computer Vision, Recurrent Networks, Deep Learning, model training and selection, model compression"
-      - "**Blockchain**: Bitcoin, Ethereum, Solidity, web3.js, Smart Contracts"
-      - "**Developer Tools**: Git, Docker, Google Cloud Platform, VIM, IntelliJ, AI tools for developers"
-      - "**Libraries**: TensorFlow, PyTorch, OpenMP, MPI, CUDA, Pandas, NumPy, Matplotlib, Plotly, Dash, Streamlit, ..."
+      - "**Blockchain**: Ethereum, Bitcoin, Solidity, web3.js, Smart Contracts"
+      - "**Developer Tools**: Git, Docker, GCP, AWS, VIM, IntelliJ, AI tools for developers"
+      - "**Libraries**: TensorFlow, PyTorch, OpenMP, MPI, CUDA, Pandas, NumPy, Matplotlib, Plotly, Dash, Streamlit"
 
   - heading: Interests/Hobbies
     points:
