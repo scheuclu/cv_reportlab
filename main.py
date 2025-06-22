@@ -47,12 +47,32 @@ MARGIN_TOP = 40
 #         color: str = '#000000'
 # )
 
+# styles = getSampleStyleSheet()
+# style_headline = styles["Heading3"].clone("section")
+# style_headline.fontName = "Calibri-Bold"
+# style_headline.fontSize = 14
+# style_headline.spaceBefore = 16
+# style_headline.textColor = "#303030"
+# style_headline.underline = True  # Ensure links are underlined
+
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.lib.enums import TA_CENTER
+style_headline = ParagraphStyle(
+    fontName="Calibri",
+    name='Centered',
+    alignment=TA_CENTER,
+    fontSize=10,       # optional: set your font size
+    leading=14,        # optional: line spacing
+    spaceAfter=0,     # optional: space after paragraph
+    spaceBefore=6
+)
+
 
 styles = getSampleStyleSheet()
 style_section = styles["Heading3"].clone("section")
 style_section.fontName = "Calibri-Bold"
 style_section.fontSize = 14
-style_section.spaceBefore = 16
+style_section.spaceBefore = 12
 style_section.textColor = "#303030"
 style_section.underline = True  # Ensure links are underlined
 # ---
@@ -60,8 +80,9 @@ style_section.underline = True  # Ensure links are underlined
 
 style_subsection = styles["Heading4"].clone("section")
 style_subsection.leading = 0
+style_section.fontSize = 10
 style_subsection.spaceAfter = 0
-style_subsection.spaceBefore = 12
+style_subsection.spaceBefore = 8
 style_subsection.fontName = "Calibri-Bold"
 style_subsection.underline = True  # Ensure links are underlined
 # ---
@@ -168,12 +189,16 @@ def process_file(yaml_path, pdf_path):
     doc = []
 
     doc += header(
-        name="Lukas Scheucher",
-        mail="scheuclu@gmail.com",
+        name=cv['name'],
+        mail=cv['email'],
         # phone="0043-677-6100-3595",
-        github="scheuclu",
-        linkedin="scheuclu",
+        github=cv['github'],
+        linkedin=cv['linkedin'],
     )
+
+    # headline
+    if 'headline' in cv:
+        doc += simple_text(cv['headline'], style=style_headline)
 
     for section in cv["sections"]:
         heading = section["heading"]
