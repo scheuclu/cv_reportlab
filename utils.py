@@ -67,6 +67,9 @@ def _line_breaks(s):
     return s.replace('  ','<br></br>')
 
 
+def link(url, label):
+    return f'<a href="{url}"><font color="#0000EE"><u>{label}</u></font></a>'
+
 
 def _markdown_links(s):
     # site = re.compile("\[(.*)\]").search(s)
@@ -81,7 +84,7 @@ def _markdown_links(s):
     for site, url in zip(sites, urls):
         s = s.replace(
             f"[{site}]({url})",
-            f"<a href='{url})'> {site} </a>",
+            f'<a href="{url}"><font color="#213980"><u>{site}</u></font></a>'
         )
 
     return s

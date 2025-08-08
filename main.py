@@ -97,17 +97,20 @@ style_date.spaceAfter = 4  # After founder in residence
 
 style_section_points = styles["Normal"].clone("style_section_points")
 style_section_points.fontName = "Calibri"
+style_section_points.underline = True  # Ensure links are underlined
 # ---
 
 style_prompt = styles["Normal"].clone("style_prompt")
 style_prompt.fontName = "Calibri"
 style_prompt.fontSize = 1
 style_prompt.textColor = "#ffffff"
+style_prompt.underline = True  # Ensure links are underlined
 # ---
 
 
 style_subsection_points = styles["Normal"].clone("style_section_points")
 style_subsection_points.fontName = "Calibri"
+style_subsection_points.underline = True  # Ensure links are underlined
 # ---
 
 style_cv_title = styles["Heading1"].clone("style_cv_title")
