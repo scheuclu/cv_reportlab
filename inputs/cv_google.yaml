@@ -25,32 +25,31 @@ sections:
         points:
           - Developed the initial product, a backtesting and analysis tool for crypto traders using Python, Solidity, NextJS, and more. We provide a complete solution, from data sourcing to strategy development and testing to result analysis—our product covers it all.
           - Leading a team of 5 engineers to expand and add features. Still averaging over 2,000 GitHub contributions per year.
-          - Built an comprehensive API for excution and trading in crypto. Added Langchain and MCP tools on top to allow LLMs to interact with it.
+          - Built a comprehensive API for excution and trading in crypto. Added Langchain and MCP tools on top to allow LLMs to interact with it.
           - Raised close to <u>2M USD</u> in VC funding, including <u>a16z</u> and other top-tier investors, and onboarded institutional clients.
           - Regularly attend and speak at conferences, meet with industry stakeholders, organize hackathons, and more.
 #          - Participated in an 8-week on-site program by Andreessen Horowitz in London.
 
-#      - heading:
-#          logo: /logo_ef.png
-#          label: Founder in Residence - Entrepreneur First, London
-#          startdate: Mar 2022
-#          enddate: May 2022
-#        text: |
-#          I went through the <u>Entrepreneur First accelerator</u> where I explored several ideas, which eventually culminated in Compass Labs.
-#          Entrepreneur First is a global talent investor that helps individuals find co-founders, develop startup ideas, and build high-growth technology companies from scratch.
-#
+      - heading:
+          logo: /logo_ef.png
+          label: Founder in Residence - Entrepreneur First, London
+          startdate: Mar 2022
+          enddate: May 2022
+        points:
+          - I went through the <u>Entrepreneur First accelerator</u> where I explored several ideas, which eventually culminated in Compass Labs.
+          - Entrepreneur First is a global talent investor that helps individuals find co-founders, develop startup ideas, and build high-growth technology companies from scratch.
+          - Entrepreneur First has an acceptance rate of about 1%.
+
 
       - heading:
           logo: /logo_google.png
-          label: "Software Engineer - Google X, Munich"
+          label: "Software Engineer - Google, Munich"
           startdate: 2019
-          enddate: 2022
+          enddate: 2021
         points:
-          - Worked as an Applied AI engineer at Google X (Moonshots), where I owned the AI training pipeline (PyTorch, Docker, Kubernetes).
-          - We built a wearable device that has been release and recently featured in [Time Magazine](https://time.com/7094544/arcteryx-and-skip-mo-go)
-          - Conceived and built an internal ML model for monitoring Google’s servers. Used to monitor millions of machines in production.
+          - Started as a Site Reliability Engineer at Google. In my first 6 months, I ideated and built an analytics pipeline to monitor global rollout policy compliance across Google. [go/scheucher-rocks](https://go/scheucher-rocks).
+          - I did a bungee placement at Google X (Moonshots), where we built a wearable device that was released and recently featured in [Time Magazine](https://time.com/7094544/arcteryx-and-skip-mo-go).
           - Received a consistent rating of "Strongly Exceeds Expectations." Promoted after the first year.
-          -
 
       - heading:
           logo: /logo_volkswagen.png
@@ -61,6 +60,7 @@ sections:
           - Developed a 2D perception model for autonomous driving using Convolutional Neural Networks (PyTorch, CUDA, C++).
           - Researched and built the models, then orchestrated the training and optimization loop, along with creating analysis tools.
           - Converted the final model to run on an embedded in-car device using quantization, pruning, and TensorRT.
+          - Attended international conferences like NeurIPS, presented our company and brought valuable learnings back to our team.
 
   - heading: Education/Research Work
     logos:
@@ -83,8 +83,8 @@ sections:
           startdate: 2016
           enddate: 2017
         points:
-          - Implemented gradient computation in a C++ fluid dynamics [code. ](https://cmsoftinc.com/CMS-AeroF)This code is used by the US Army to develop new aircraft.
-          - My final project/thesis on coupling the fluid and solid mechanics codes received the highest possible grade.
+          - Implemented gradient computation in a C++ fluid dynamics [code. ](https://cmsoftinc.com/CMS-AeroF). This code is used by the US Army to develop new aircraft.
+          - My [final project](https://github.com/scheuclu/master-thesis/blob/master/Final_presentation/build/Presentation.pdf) on coupling the fluid and solid mechanics codes received the highest possible grade.
 
   - heading: Technical Skills
     logos:
@@ -98,14 +98,15 @@ sections:
       - "./logos//logo_ethereum.png"
       - "./logos//logo_aws.png"
     points:
-      - "**Languages**: Python, C++, Solidity, Go, SQL, JavaScript, Bash"
+      - "**Languages**: Python, C++, Typescript, Solidity, Go, SQL, Bash"
       - "**Frontend**: Next, React, Electron, CSS, SASS"
-      - "**Backend**: Node.js, Databases, SQL, API development, DevOps, CI/CD, Terraform"
+      - "**Backend/Infra**: FastAPI, Pydantic, Starlette, asyncio, AWS (ECS, API Gateway, Cognito, WAF, SES, CloudWatch), Terraform, GitHub Actions, Datadog, Logfire"
+      - "**Infra/Networking**: Docker, VPCs, load balancing, security (SOC2, ISO-27001, GDPR, DORA compliance)"
       - "**Machine Learning**: Computer Vision, Recurrent Networks, Deep Learning, model training and selection, model compression"
       - "**Blockchain**: Bitcoin, Ethereum, Solidity, web3.js, Smart Contracts"
       - "**Developer Tools**: Git, Docker, Google Cloud Platform, VIM, IntelliJ, AI tools for developers"
       - "**Libraries**: TensorFlow, PyTorch, OpenMP, MPI, CUDA, Pandas, NumPy, Matplotlib, Plotly, Dash, Streamlit, ..."
-      - "**LLMs/Agents**: RAG, Tool develoment, LangChain, MCP, ..."
+      - "**Agents/LLMs**: LangChain, MCP, OpenAI Assistants, Pydantic-AI, structured output, function calling, tool execution"
 
   - heading: Interests/Hobbies
     points:

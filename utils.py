@@ -71,23 +71,20 @@ def link(url, label):
     return f'<a href="{url}"><font color="#0000EE"><u>{label}</u></font></a>'
 
 
-def _markdown_links(s):
-    # site = re.compile("\[(.*)\]").search(s)
-    # url = re.compile("\((.*)\)").search(s)
+def _markdown_links(s: str) -> str:
+    """
+    Converts markdown-style links [text](url)
+    into HTML <a> links with a custom style.
+    """
+    # Use non-greedy matching for both brackets and parentheses
+    pattern = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
-    sites = re.compile("\[(.*)\]").findall(s)
-    urls = re.compile("\((.*)\)").findall(s)
+    def replacer(match):
+        text = match.group(1)
+        url = match.group(2)
+        return f'<a href="{url}"><font color="#213980"><u>{text}</u></font></a>'
 
-    # "aaaa [Full list on LinkedIn](https://www.linkedin.com/in/scheuclu)"
-    # "aaa  <a href='TODO'> word </a>
-
-    for site, url in zip(sites, urls):
-        s = s.replace(
-            f"[{site}]({url})",
-            f'<a href="{url}"><font color="#213980"><u>{site}</u></font></a>'
-        )
-
-    return s
+    return pattern.sub(replacer, s)
 
 
 def markdown_replace(s):
